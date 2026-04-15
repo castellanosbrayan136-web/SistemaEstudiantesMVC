@@ -5,7 +5,7 @@ package Controller;
 import Model.Profesor;
 import Model.ProfesorDAO;
 import View.ScreenManager;
-import View.VistaProfesor;
+import View.ViewProfesor;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.List;
@@ -16,22 +16,24 @@ import javax.swing.table.DefaultTableModel;
 public class ControllerProfesor implements ActionListener{
 
     private ProfesorDAO profesorDAO;
-    private VistaProfesor vistaProfesor;
+    private ViewProfesor vistaProfesor;
 
-    public ControllerProfesor(ProfesorDAO profesorDAO, VistaProfesor vistaProfesor) {
+    public ControllerProfesor(ProfesorDAO profesorDAO, ViewProfesor vistaProfesor) {
         this.profesorDAO = profesorDAO;
         this.vistaProfesor = vistaProfesor;
         
         activarBotones();
     }
     
+    
+    
     public void activarBotones() {
         vistaProfesor.getBtnBuscar().addActionListener(this);
         vistaProfesor.getBtnActualizar().addActionListener(this);
         vistaProfesor.getBtnEliminar().addActionListener(this);
         vistaProfesor.getBtnRegistrar().addActionListener(this);
-        vistaProfesor.getBtnLimpiarTabla().addActionListener(this);
-        vistaProfesor.getBtnSalirRegistroProfesores().addActionListener(this);
+        vistaProfesor.getBtnResetearDatos().addActionListener(this);
+        vistaProfesor.getBtnRegresar().addActionListener(this);
         
         
         limpiarEspacios();
@@ -50,10 +52,10 @@ public class ControllerProfesor implements ActionListener{
             actualizarProfesor();
         } else if (e.getSource() == vistaProfesor.getBtnEliminar()) {
             eliminarProfesor();
-        } else if (e.getSource() == vistaProfesor.getBtnLimpiarTabla()) {
+        } else if (e.getSource() == vistaProfesor.getBtnResetearDatos()) {
             limpiarTabla((DefaultTableModel) vistaProfesor.getTablaProfesores().getModel());
-        } else if (e.getSource() == vistaProfesor.getBtnSalirRegistroProfesores() ) {
-            ScreenManager.cerrarProfesores(ControllerProfesor.this);
+        } else if (e.getSource() == vistaProfesor.getBtnRegresar()) {
+            ScreenManager.cerrarMenuProfesores(vistaProfesor);
             ScreenManager.abrirMenuPrincipal();
         }
     }

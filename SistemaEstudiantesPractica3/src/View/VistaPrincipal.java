@@ -33,29 +33,34 @@ public class VistaPrincipal extends javax.swing.JFrame {
         jPanel1 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         btnRegistrarEstudiantes = new javax.swing.JButton();
-        btnRegistrarProfesores = new javax.swing.JButton();
         btnRegistrarMaterias = new javax.swing.JButton();
         btnAsignarMaterias = new javax.swing.JButton();
         btnSalir = new javax.swing.JButton();
+        abrirRegistrarProfesoresBTN = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        addWindowListener(new java.awt.event.WindowAdapter() {
+            public void windowClosed(java.awt.event.WindowEvent evt) {
+                formWindowClosed(evt);
+            }
+        });
 
         jPanel1.setBackground(new java.awt.Color(0, 0, 0));
         jPanel1.setPreferredSize(new java.awt.Dimension(805, 600));
 
         jLabel1.setFont(new java.awt.Font("SimSun", 2, 48)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel1.setText("Sistema Academico V.11");
+        jLabel1.setText("Sistema Academico V0.11");
 
         btnRegistrarEstudiantes.setFont(new java.awt.Font("Segoe UI Historic", 2, 24)); // NOI18N
         btnRegistrarEstudiantes.setText("Registrar Estudiantes");
         btnRegistrarEstudiantes.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         btnRegistrarEstudiantes.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-
-        btnRegistrarProfesores.setFont(new java.awt.Font("Segoe UI Historic", 2, 24)); // NOI18N
-        btnRegistrarProfesores.setText("Resgitrar Profesores");
-        btnRegistrarProfesores.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
-        btnRegistrarProfesores.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnRegistrarEstudiantes.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnRegistrarEstudiantesActionPerformed(evt);
+            }
+        });
 
         btnRegistrarMaterias.setFont(new java.awt.Font("Segoe UI Historic", 2, 24)); // NOI18N
         btnRegistrarMaterias.setText("Registrar Materias");
@@ -77,6 +82,9 @@ public class VistaPrincipal extends javax.swing.JFrame {
             }
         });
 
+        abrirRegistrarProfesoresBTN.setFont(new java.awt.Font("Microsoft YaHei UI", 2, 24)); // NOI18N
+        abrirRegistrarProfesoresBTN.setText("Registrar Profesor");
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
@@ -84,21 +92,20 @@ public class VistaPrincipal extends javax.swing.JFrame {
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(105, 105, 105)
-                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 583, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(200, 200, 200)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(btnSalir, javax.swing.GroupLayout.PREFERRED_SIZE, 350, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addComponent(btnRegistrarMaterias, javax.swing.GroupLayout.PREFERRED_SIZE, 349, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                        .addComponent(btnRegistrarProfesores, javax.swing.GroupLayout.PREFERRED_SIZE, 350, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addComponent(btnRegistrarEstudiantes, javax.swing.GroupLayout.PREFERRED_SIZE, 350, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                                .addGroup(jPanel1Layout.createSequentialGroup()
-                                    .addGap(1, 1, 1)
-                                    .addComponent(btnAsignarMaterias, javax.swing.GroupLayout.PREFERRED_SIZE, 350, javax.swing.GroupLayout.PREFERRED_SIZE))))))
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                .addComponent(btnRegistrarMaterias, javax.swing.GroupLayout.PREFERRED_SIZE, 349, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(btnRegistrarEstudiantes, javax.swing.GroupLayout.PREFERRED_SIZE, 350, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(btnAsignarMaterias, javax.swing.GroupLayout.PREFERRED_SIZE, 350, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addGap(1, 1, 1)
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(btnSalir, javax.swing.GroupLayout.PREFERRED_SIZE, 350, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(abrirRegistrarProfesoresBTN, javax.swing.GroupLayout.PREFERRED_SIZE, 350, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(105, 105, 105)
+                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 583, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(117, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
@@ -108,15 +115,15 @@ public class VistaPrincipal extends javax.swing.JFrame {
                 .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(btnRegistrarEstudiantes)
-                .addGap(38, 38, 38)
-                .addComponent(btnRegistrarProfesores)
-                .addGap(36, 36, 36)
-                .addComponent(btnRegistrarMaterias)
                 .addGap(37, 37, 37)
-                .addComponent(btnAsignarMaterias)
+                .addComponent(abrirRegistrarProfesoresBTN)
+                .addGap(34, 34, 34)
+                .addComponent(btnRegistrarMaterias)
                 .addGap(39, 39, 39)
+                .addComponent(btnAsignarMaterias)
+                .addGap(36, 36, 36)
                 .addComponent(btnSalir)
-                .addContainerGap(158, Short.MAX_VALUE))
+                .addContainerGap(159, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -141,6 +148,14 @@ public class VistaPrincipal extends javax.swing.JFrame {
     private void btnSalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSalirActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_btnSalirActionPerformed
+
+    private void btnRegistrarEstudiantesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRegistrarEstudiantesActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnRegistrarEstudiantesActionPerformed
+
+    private void formWindowClosed(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowClosed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_formWindowClosed
 
     /**
      * @param args the command line arguments
@@ -179,21 +194,24 @@ public class VistaPrincipal extends javax.swing.JFrame {
         return btnRegistrarMaterias;
     }
 
-    public JButton getBtnRegistrarProfesores() {
-        return btnRegistrarProfesores;
-    }
-
     public JButton getBtnSalir() {
         return btnSalir;
     }
+
+    public JButton getBtnRegistrarProfesores() {
+        return abrirRegistrarProfesoresBTN;
+    }
+
+    
+    
     
     
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton abrirRegistrarProfesoresBTN;
     private javax.swing.JButton btnAsignarMaterias;
     private javax.swing.JButton btnRegistrarEstudiantes;
     private javax.swing.JButton btnRegistrarMaterias;
-    private javax.swing.JButton btnRegistrarProfesores;
     private javax.swing.JButton btnSalir;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JPanel jPanel1;

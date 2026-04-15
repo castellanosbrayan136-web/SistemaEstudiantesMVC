@@ -13,7 +13,6 @@ import Model.ProfesorDAO;
 public class ScreenManager {
     public static void abrirMenuPrincipal() {
         VistaPrincipal vistaPrincipal = new VistaPrincipal();
-        
         ControllerMenuPrincipal controllerPrincipal  = new ControllerMenuPrincipal(vistaPrincipal);
         
         vistaPrincipal.setVisible(true);
@@ -35,17 +34,17 @@ public class ScreenManager {
         vistaEstudiante.setVisible(false);
     }
     
-    public static void abrirProfesores() {
-        VistaProfesor vistaProfesor = new VistaProfesor();
+    public static void abrirMenuProfesores() {
+        ViewProfesor vistaProfesor = new ViewProfesor();
         ProfesorDAO profesorDAO = new ProfesorDAO();
         
         ControllerProfesor controllerProfesor = new ControllerProfesor(profesorDAO, vistaProfesor);
-        vistaProfesor.setLocationRelativeTo(null);
+        
         vistaProfesor.setVisible(true);
     }
     
-    public static void cerrarProfesores(ControllerProfesor controllerProfesor) {
-        controllerProfesor.cerrarVentana();
+    public static void cerrarMenuProfesores(ViewProfesor vistaProfesor) {
+        vistaProfesor.setVisible(false);
     }
     
     public static void abrirMaterias() {

@@ -26,8 +26,7 @@ public class ControllerEstudiante implements ActionListener{
     this.vistaEstudiante.addWindowListener(new java.awt.event.WindowAdapter() {
         @Override
         public void windowClosing(java.awt.event.WindowEvent e) {
-            ScreenManager.cerrarEstudiantes(vistaEstudiante);
-            ScreenManager.abrirMenuPrincipal();
+            System.exit(0);
         }
     });
     }

@@ -55,7 +55,7 @@ public class VistaEstudiante extends javax.swing.JFrame {
         jScrollPane1 = new javax.swing.JScrollPane();
         tablaEstudiantes = new javax.swing.JTable();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
         jPanel1.setForeground(new java.awt.Color(255, 255, 255));
@@ -85,20 +85,17 @@ public class VistaEstudiante extends javax.swing.JFrame {
         txtId.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         txtId.setForeground(new java.awt.Color(33, 33, 33));
         txtId.setBorder(javax.swing.BorderFactory.createEtchedBorder(java.awt.Color.black, null));
-        txtId.setCaretColor(new java.awt.Color(0, 0, 0));
         txtId.setSelectionColor(new java.awt.Color(255, 255, 255));
 
         txtNombre.setBackground(new java.awt.Color(245, 245, 245));
         txtNombre.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         txtNombre.setForeground(new java.awt.Color(33, 33, 33));
         txtNombre.setBorder(javax.swing.BorderFactory.createEtchedBorder(java.awt.Color.black, null));
-        txtNombre.setCaretColor(new java.awt.Color(0, 0, 0));
 
         txtApellido.setBackground(new java.awt.Color(245, 245, 245));
         txtApellido.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         txtApellido.setForeground(new java.awt.Color(33, 33, 33));
         txtApellido.setBorder(javax.swing.BorderFactory.createEtchedBorder(java.awt.Color.black, null));
-        txtApellido.setCaretColor(new java.awt.Color(0, 0, 0));
         txtApellido.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtApellidoActionPerformed(evt);
@@ -109,7 +106,6 @@ public class VistaEstudiante extends javax.swing.JFrame {
         txtPromedio.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         txtPromedio.setForeground(new java.awt.Color(33, 33, 33));
         txtPromedio.setBorder(javax.swing.BorderFactory.createEtchedBorder(java.awt.Color.black, null));
-        txtPromedio.setCaretColor(new java.awt.Color(0, 0, 0));
 
         btnRegistrar.setBackground(new java.awt.Color(102, 102, 102));
         btnRegistrar.setFont(new java.awt.Font("Segoe UI Historic", 2, 14)); // NOI18N

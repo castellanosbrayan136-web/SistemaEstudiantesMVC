@@ -17,10 +17,11 @@ public class ControllerMenuPrincipal implements ActionListener{
         
         activarBotones();
     }
+
+    
     
     public void activarBotones() {
         vistaPrincipal.getBtnRegistrarEstudiantes().addActionListener(this);
-        vistaPrincipal.getBtnRegistrarProfesores().addActionListener(this);
         vistaPrincipal.getBtnAsignarMaterias().addActionListener(this);
         vistaPrincipal.getBtnRegistrarProfesores().addActionListener(this);
         vistaPrincipal.getBtnSalir().addActionListener(this);
@@ -34,7 +35,7 @@ public class ControllerMenuPrincipal implements ActionListener{
             ScreenManager.abrirEstudiantes();
         } else if (e.getSource() == vistaPrincipal.getBtnRegistrarProfesores()) {
             ScreenManager.cerrarMenuPrincipal(vistaPrincipal);
-            ScreenManager.abrirProfesores();
+            ScreenManager.abrirMenuProfesores();
         } else if (e.getSource() == vistaPrincipal.getBtnRegistrarMaterias()){
             ScreenManager.cerrarMenuPrincipal(vistaPrincipal);
             ScreenManager.abrirMaterias();
@@ -42,6 +43,9 @@ public class ControllerMenuPrincipal implements ActionListener{
             vistaPrincipal.dispose();
             ScreenManager.cerrarMenuPrincipal(vistaPrincipal);
             System.exit(0);
+        } else if (e.getSource() == vistaPrincipal.getBtnRegistrarProfesores()) {
+            ScreenManager.cerrarMenuPrincipal(vistaPrincipal);
+            ScreenManager.abrirMenuProfesores();
         }
     }
     
