@@ -3,10 +3,10 @@ package Model;
 //@autor: Brayan C
 
 public class Estudiante {
-    private String id;
-    private String nombre;
-    private String apellido;
-    private double promedio;
+    private final String id;
+    private final String nombre;
+    private final String apellido;
+    private final double promedio;
 
     public Estudiante(String id, String nombre, String apellido, double promedio) {
         this.id = id;

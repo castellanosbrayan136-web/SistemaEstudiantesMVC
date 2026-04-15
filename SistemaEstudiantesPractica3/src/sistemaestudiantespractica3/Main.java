@@ -7,6 +7,6 @@ import View.ScreenManager;
 
 public class Main {
     public static void main(String[] args) {
-        ScreenManager.abrirEstudiantes();
+        ScreenManager.abrirMenuPrincipal();
     }
 }

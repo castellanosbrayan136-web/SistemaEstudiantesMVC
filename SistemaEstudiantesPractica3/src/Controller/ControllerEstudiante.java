@@ -4,6 +4,7 @@ package Controller;
 
 import Model.Estudiante;
 import Model.EstudianteDAO;
+import View.ScreenManager;
 import View.VistaEstudiante;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -12,24 +13,41 @@ import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 
 
-public class Controller implements ActionListener{
-    private EstudianteDAO estudianteDAO;
-    private VistaEstudiante vistaEstudiante;
+public class ControllerEstudiante implements ActionListener{
+    private final EstudianteDAO estudianteDAO;
+    private final VistaEstudiante vistaEstudiante;
 
-    public Controller(EstudianteDAO estudianteDAO, VistaEstudiante vistaEstudiante) {
+    public ControllerEstudiante(EstudianteDAO estudianteDAO, VistaEstudiante vistaEstudiante) {
         this.estudianteDAO = estudianteDAO;
         this.vistaEstudiante = vistaEstudiante;
         
-        limpiarEspacios();
+        activarBotones();
         
+    this.vistaEstudiante.addWindowListener(new java.awt.event.WindowAdapter() {
+        @Override
+        public void windowClosing(java.awt.event.WindowEvent e) {
+            ScreenManager.cerrarEstudiantes(vistaEstudiante);
+            ScreenManager.abrirMenuPrincipal();
+        }
+    });
+    }
+
+
+    
+    
+    public void activarBotones() {
         vistaEstudiante.getBtnBuscar().addActionListener(this);
         vistaEstudiante.getBtnActualizar().addActionListener(this);
         vistaEstudiante.getBtnEliminar().addActionListener(this);
         vistaEstudiante.getBtnRegistrar().addActionListener(this);
         vistaEstudiante.getBtnLimpiarTabla().addActionListener(this);
+        vistaEstudiante.getBtnRegresar().addActionListener(this);
         
+        limpiarEspacios();
         llenarTabla();
     }
+    
+
 
     @Override
     public void actionPerformed(ActionEvent e) {
@@ -43,7 +61,10 @@ public class Controller implements ActionListener{
             eliminarEstudiante();
         } else if (e.getSource() == vistaEstudiante.getBtnLimpiarTabla()) {
             limpiarTabla((DefaultTableModel) vistaEstudiante.getTablaEstudiantes().getModel());
-        }
+        }  else if (e.getSource() == vistaEstudiante.getBtnRegresar()) {
+            vistaEstudiante.dispose();
+            ScreenManager.abrirMenuPrincipal();
+        } 
     }
     
     public void registrarEstudiante() {
