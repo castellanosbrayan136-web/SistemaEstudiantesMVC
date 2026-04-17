@@ -40,6 +40,18 @@ public class EstudianteDAO {
         return false;
     }
     
+    public ArrayList<Estudiante> filtrarEstudiantePorId(String idEstudiante) {
+    ArrayList<Estudiante> resultado = new ArrayList<>();
+
+    for (Estudiante eestudiante : listaEstudiantes) {
+        if (eestudiante.getId().startsWith(idEstudiante)) {
+            resultado.add(eestudiante);
+        }
+    }
+
+    return resultado;
+}
+    
     public boolean eliminarEstudiantePorId(String id) {
         return listaEstudiantes.removeIf(estudiante -> estudiante.getId().equals(id));
     }

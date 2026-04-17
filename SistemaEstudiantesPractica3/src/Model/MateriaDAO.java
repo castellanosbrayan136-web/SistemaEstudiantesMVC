@@ -49,12 +49,44 @@ public class MateriaDAO {
         return listaMaterias.removeIf(materia -> materia.getId().equals(id));
     }
     
+    public boolean asignarProfesorAMateria(Profesor profesor, String idMateria) {
+        for (Materia materia : listaMaterias) {
+            if (materia.getId().equals(idMateria)) {
+                if (materia.setProfesor(profesor)) {
+                    return true;
+                }
+            }
+        }
+        return false;
+    }
+    
+     public boolean matricularEstudiante(String idMateria, Estudiante estudiante) {
+         for (Materia materia : listaMaterias) {
+             if (materia.getId().equals(idMateria)) {
+                 materia.agregarEstudiante(estudiante);
+                 return true;
+             }
+         }
+         return false;
+     }
+     
+    public ArrayList<Materia> filtrarMateriaPorId(String idMateria) {
+    ArrayList<Materia> listaFiltrada = new ArrayList<>();
+
+    for (Materia materia : listaMaterias) {
+        if (materia.getId().startsWith(idMateria)) {
+            listaFiltrada.add(materia);
+        }
+    }
+    return listaFiltrada;
+    }
+    
     public List<Materia> retornarLista() {
         return listaMaterias;
     }
     
     public void resetearTodo() {
-        listaMaterias.clear();;
+        listaMaterias.clear();
     }
 }
 

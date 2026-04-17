@@ -49,6 +49,19 @@ public class ProfesorDAO {
         return listaProfesores;
     }
     
+    public ArrayList<Profesor> filtrarProfesorPorCedula(String cedula) {
+    ArrayList<Profesor> listaFiltrada = new ArrayList<>();
+
+    for (Profesor profesor: listaProfesores) {
+        if (profesor.getCedula().startsWith(cedula)) {
+            listaFiltrada.add(profesor);
+        }
+    }
+    return listaFiltrada;
+    }
+    
+    
+    
     public void resetearTodo() {
         listaProfesores.clear();
     }

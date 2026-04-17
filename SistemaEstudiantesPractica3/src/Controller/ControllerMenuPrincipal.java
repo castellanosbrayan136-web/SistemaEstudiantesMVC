@@ -3,6 +3,7 @@ package Controller;
 //@autor: Brayan C
 
 import View.ScreenManager;
+import View.PanelAsignarProfesor;
 import View.VistaPrincipal;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -25,8 +26,17 @@ public class ControllerMenuPrincipal implements ActionListener{
         vistaPrincipal.getBtnAsignarMaterias().addActionListener(this);
         vistaPrincipal.getBtnRegistrarProfesores().addActionListener(this);
         vistaPrincipal.getBtnSalir().addActionListener(this);
+        vistaPrincipal.getBtnRegistrarMaterias().addActionListener(this);
         
+        this.vistaPrincipal.addWindowListener(new java.awt.event.WindowAdapter() {
+            @Override
+            public void windowClosing(java.awt.event.WindowEvent e) {
+                ScreenManager.cerrarMenuPrincipal(vistaPrincipal);
+            }
+        });
     }
+    
+ 
     
     @Override
     public void actionPerformed(ActionEvent e) {
@@ -42,11 +52,17 @@ public class ControllerMenuPrincipal implements ActionListener{
         } else if (e.getSource() == vistaPrincipal.getBtnSalir()) {
             vistaPrincipal.dispose();
             ScreenManager.cerrarMenuPrincipal(vistaPrincipal);
-            System.exit(0);
         } else if (e.getSource() == vistaPrincipal.getBtnRegistrarProfesores()) {
             ScreenManager.cerrarMenuPrincipal(vistaPrincipal);
             ScreenManager.abrirMenuProfesores();
+        } else if (e.getSource() == vistaPrincipal.getBtnAsignarMaterias()) {
+            ScreenManager.cerrarMenuPrincipal(vistaPrincipal);
+            ScreenManager.abrirAsignarMaterias();
         }
     }
     
+    public void finalizar() {
+        this.vistaPrincipal.dispose();
+        this.vistaPrincipal = null;
+    }
 }
