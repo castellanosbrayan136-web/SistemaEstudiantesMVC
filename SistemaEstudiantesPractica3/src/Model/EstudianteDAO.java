@@ -2,12 +2,14 @@ package Model;
 
 //@autor: Brayan C
 
+import com.google.gson.Gson;
 import java.util.ArrayList;
 import java.util.List;
 
 
 public class EstudianteDAO {
     private static List<Estudiante> listaEstudiantes = new ArrayList<>();
+    private Gson gson;
     
     public boolean registrarEstudiante(Estudiante estudiante) {
         if (estudiante.getNombre().trim().isEmpty() || estudiante.getApellido().trim().isEmpty() || estudiante.getId().trim().isEmpty()) {
