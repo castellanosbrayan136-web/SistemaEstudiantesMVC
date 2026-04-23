@@ -154,5 +154,4 @@ public class ControllerPanelMatricularEstudiante implements ActionListener{
     public String leerIDEstudiante() {
         return panelMatricularEstudiante.getTxtIdEstudiante();
     }
-
 }

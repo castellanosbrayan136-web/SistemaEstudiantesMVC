@@ -16,9 +16,9 @@ import javax.swing.table.DefaultTableModel;
 
 public class ControllerPanelAsignarProfesor implements ActionListener{
     
-    private MateriaDAO materiaDAO;
-    private ProfesorDAO profesorDAO;
-    private PanelAsignarProfesor panelAsignarProfesor;
+    private final MateriaDAO materiaDAO;
+    private final ProfesorDAO profesorDAO;
+    private final PanelAsignarProfesor panelAsignarProfesor;
 
     public ControllerPanelAsignarProfesor(MateriaDAO materiaDAO, ProfesorDAO profesorDAO, PanelAsignarProfesor panelAsignarProfesor) {
         this.materiaDAO = materiaDAO;
@@ -140,8 +140,12 @@ public class ControllerPanelAsignarProfesor implements ActionListener{
     }
     
     public void AsignarProfesorAMateria() {
-        materiaDAO.asignarProfesorAMateria(obtenerProfesorSeleccionadoPorId(), ObtenerIdMateriaSeleccionada());
-        JOptionPane.showMessageDialog(panelAsignarProfesor, "Profesor asignado correctamente.");
+        
+        if (materiaDAO.asignarProfesorAMateria(obtenerProfesorSeleccionadoPorId(), ObtenerIdMateriaSeleccionada())) {
+            JOptionPane.showMessageDialog(panelAsignarProfesor, "Profesor asignado correctamente.");
+        } else {
+        JOptionPane.showMessageDialog(panelAsignarProfesor, "Ya existe profesor para esta materia");
+        }
     }
 
     
@@ -152,6 +156,4 @@ public class ControllerPanelAsignarProfesor implements ActionListener{
     public String leerCedulaProfesor() {
         return panelAsignarProfesor.getTxtICedulaProfesor();
     }
-
-    
 }

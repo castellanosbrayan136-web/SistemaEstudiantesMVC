@@ -4,19 +4,13 @@
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
             <file>file:/C:/Users/caste/Documents/SistemaEstudiantesMVC/SistemaEstudiantesPractica3/src/Model/MateriaDAO.java</file>
-            <file>file:/C:/Users/caste/Documents/SistemaEstudiantesMVC/SistemaEstudiantesPractica3/src/Model/Materia.java</file>
-            <file>file:/C:/Users/caste/Documents/SistemaEstudiantesMVC/SistemaEstudiantesPractica3/src/View/PanelAsignarProfesor.java</file>
-            <file>file:/C:/Users/caste/Documents/SistemaEstudiantesMVC/SistemaEstudiantesPractica3/src/Controller/ControllerAsignarMaterias.java</file>
-            <file>file:/C:/Users/caste/Documents/SistemaEstudiantesMVC/SistemaEstudiantesPractica3/src/Controller/ControllerPanelAsignarProfesor.java</file>
-            <file>file:/C:/Users/caste/Documents/SistemaEstudiantesMVC/SistemaEstudiantesPractica3/src/Controller/ControllerMateria.java</file>
-            <file>file:/C:/Users/caste/Documents/SistemaEstudiantesMVC/SistemaEstudiantesPractica3/src/View/ScreenManager.java</file>
-            <file>file:/C:/Users/caste/Documents/SistemaEstudiantesMVC/SistemaEstudiantesPractica3/src/Controller/ControllerMenuPrincipal.java</file>
-            <file>file:/C:/Users/caste/Documents/SistemaEstudiantesMVC/SistemaEstudiantesPractica3/src/Model/EstudianteDAO.java</file>
-            <file>file:/C:/Users/caste/Documents/SistemaEstudiantesMVC/SistemaEstudiantesPractica3/src/View/VistaAsignarMaterias.java</file>
-            <file>file:/C:/Users/caste/Documents/SistemaEstudiantesMVC/SistemaEstudiantesPractica3/src/Controller/ControllerEstudiante.java</file>
-            <file>file:/C:/Users/caste/Documents/SistemaEstudiantesMVC/SistemaEstudiantesPractica3/src/Controller/ControllerPanelMatricularEstudiante.java</file>
             <file>file:/C:/Users/caste/Documents/SistemaEstudiantesMVC/SistemaEstudiantesPractica3/src/Model/ProfesorDAO.java</file>
-            <file>file:/C:/Users/caste/Documents/SistemaEstudiantesMVC/SistemaEstudiantesPractica3/src/View/VistaPrincipal.java</file>
+            <file>file:/C:/Users/caste/Documents/SistemaEstudiantesMVC/SistemaEstudiantesPractica3/src/View/ScreenManager.java</file>
+            <file>file:/C:/Users/caste/Documents/SistemaEstudiantesMVC/SistemaEstudiantesPractica3/src/Model/Profesor.java</file>
+            <file>file:/C:/Users/caste/Documents/SistemaEstudiantesMVC/SistemaEstudiantesPractica3/src/Model/Materia.java</file>
+            <file>file:/C:/Users/caste/Documents/SistemaEstudiantesMVC/SistemaEstudiantesPractica3/src/Model/Estudiante.java</file>
+            <file>file:/C:/Users/caste/Documents/SistemaEstudiantesMVC/SistemaEstudiantesPractica3/src/Model/EstudianteDAO.java</file>
+            <file>file:/C:/Users/caste/Documents/SistemaEstudiantesMVC/SistemaEstudiantesPractica3/src/Controller/ControllerPanelAsignarProfesor.java</file>
         </group>
     </open-files>
 </project-private>

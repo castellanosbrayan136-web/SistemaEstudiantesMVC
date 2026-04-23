@@ -8,12 +8,13 @@ import View.ScreenManager;
 import View.ViewProfesor;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.util.List;
+import java.awt.event.WindowAdapter;
+import java.awt.event.WindowEvent;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 
 
-public class ControllerProfesor implements ActionListener{
+public final class ControllerProfesor implements ActionListener{
 
     private ProfesorDAO profesorDAO;
     private ViewProfesor vistaProfesor;
@@ -23,6 +24,9 @@ public class ControllerProfesor implements ActionListener{
         this.vistaProfesor = vistaProfesor;
         
         activarBotones();
+        limpiarEspacios();
+        llenarTabla();
+        eventoBotonX();
     }
     
     
@@ -33,12 +37,20 @@ public class ControllerProfesor implements ActionListener{
         vistaProfesor.getBtnEliminar().addActionListener(this);
         vistaProfesor.getBtnRegistrar().addActionListener(this);
         vistaProfesor.getBtnResetearDatos().addActionListener(this);
-        vistaProfesor.getBtnRegresar().addActionListener(this);
         
         
-        limpiarEspacios();
-        llenarTabla();
     }
+    
+    public void eventoBotonX() {
+        this.vistaProfesor.addWindowListener(new WindowAdapter() {
+            @Override
+            public void windowClosing(WindowEvent e) {
+                ScreenManager.cerrarGestionProfesores(vistaProfesor);
+            }
+        });
+        
+    }
+    
     
 
 
@@ -54,10 +66,7 @@ public class ControllerProfesor implements ActionListener{
             eliminarProfesor();
         } else if (e.getSource() == vistaProfesor.getBtnResetearDatos()) {
             limpiarTabla((DefaultTableModel) vistaProfesor.getTablaProfesores().getModel());
-        } else if (e.getSource() == vistaProfesor.getBtnRegresar()) {
-            ScreenManager.cerrarMenuProfesores(vistaProfesor);
-            ScreenManager.abrirMenuPrincipal();
-        }
+        } 
     }
     
     public void registrarProfesor() {
@@ -133,9 +142,7 @@ public class ControllerProfesor implements ActionListener{
         
         Object[] fila = new Object[4];
         
-        List<Profesor> listaProfesores = profesorDAO.retornarLista();
-        
-        for (Profesor profesor: listaProfesores) {
+        for (Profesor profesor: profesorDAO.retornarLista()) {
             fila[0] = profesor.getCedula();
             fila[1] = profesor.getNombres();
             fila[2] = profesor.getApellidos();
@@ -171,5 +178,6 @@ public class ControllerProfesor implements ActionListener{
     public void cerrarVentana() {
         this.vistaProfesor.dispose();
     }
+    
 }
 

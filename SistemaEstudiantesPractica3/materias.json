@@ -1,0 +1,200 @@
+[
+  {
+    "id": "#23349",
+    "nombre": "Ingles",
+    "creditos": 4,
+    "profesor": {
+      "cedula": "7363452",
+      "nombres": "Maria",
+      "apellidos": "Carrillo",
+      "numeroTelefono": "3158746523"
+    },
+    "estudiantes": [
+      {
+        "id": "2255622",
+        "nombre": "Brayan Stiven",
+        "apellido": "Castellanos Diaz",
+        "promedio": 5.0
+      },
+      {
+        "id": "225543",
+        "nombre": "Camilo",
+        "apellido": "Jaimes",
+        "promedio": 2.0
+      },
+      {
+        "id": "2255678",
+        "nombre": "Pablo",
+        "apellido": "Medina",
+        "promedio": 3.6
+      }
+    ]
+  },
+  {
+    "id": "#45332",
+    "nombre": "Cálculo",
+    "creditos": 4,
+    "profesor": {
+      "cedula": "455",
+      "nombres": "Tilson",
+      "apellidos": "Suarez",
+      "numeroTelefono": "3163849234"
+    },
+    "estudiantes": [
+      {
+        "id": "2255622",
+        "nombre": "Brayan Stiven",
+        "apellido": "Castellanos Diaz",
+        "promedio": 5.0
+      },
+      {
+        "id": "2255644",
+        "nombre": "Juan",
+        "apellido": "Suarez",
+        "promedio": 3.0
+      },
+      {
+        "id": "225543",
+        "nombre": "Camilo",
+        "apellido": "Jaimes",
+        "promedio": 2.0
+      },
+      {
+        "id": "2255634",
+        "nombre": "Felipe",
+        "apellido": "Dominges",
+        "promedio": 5.0
+      },
+      {
+        "id": "2255678",
+        "nombre": "Pablo",
+        "apellido": "Medina",
+        "promedio": 3.6
+      }
+    ]
+  },
+  {
+    "id": "#98877",
+    "nombre": "Etica",
+    "creditos": 3,
+    "profesor": {
+      "cedula": "455",
+      "nombres": "Tilson",
+      "apellidos": "Suarez",
+      "numeroTelefono": "3163849234"
+    },
+    "estudiantes": [
+      {
+        "id": "2255634",
+        "nombre": "Felipe",
+        "apellido": "Dominges",
+        "promedio": 5.0
+      },
+      {
+        "id": "225543",
+        "nombre": "Camilo",
+        "apellido": "Jaimes",
+        "promedio": 2.0
+      }
+    ]
+  },
+  {
+    "id": "#1223",
+    "nombre": "Física",
+    "creditos": 4,
+    "profesor": {
+      "cedula": "34465221",
+      "nombres": "Ferney",
+      "apellidos": "Malaver",
+      "numeroTelefono": "3245679834"
+    },
+    "estudiantes": [
+      {
+        "id": "2255622",
+        "nombre": "Brayan Stiven",
+        "apellido": "Castellanos Diaz",
+        "promedio": 5.0
+      },
+      {
+        "id": "2255644",
+        "nombre": "Juan",
+        "apellido": "Suarez",
+        "promedio": 3.0
+      },
+      {
+        "id": "2255678",
+        "nombre": "Pablo",
+        "apellido": "Medina",
+        "promedio": 3.6
+      },
+      {
+        "id": "225543",
+        "nombre": "Camilo",
+        "apellido": "Jaimes",
+        "promedio": 2.0
+      }
+    ]
+  },
+  {
+    "id": "#78065",
+    "nombre": "Programación orientada a objetos",
+    "creditos": 4,
+    "profesor": {
+      "cedula": "7363452",
+      "nombres": "Maria",
+      "apellidos": "Carrillo",
+      "numeroTelefono": "3158746523"
+    },
+    "estudiantes": [
+      {
+        "id": "2255622",
+        "nombre": "Brayan Stiven",
+        "apellido": "Castellanos Diaz",
+        "promedio": 5.0
+      },
+      {
+        "id": "2255644",
+        "nombre": "Juan",
+        "apellido": "Suarez",
+        "promedio": 3.0
+      },
+      {
+        "id": "2255634",
+        "nombre": "Felipe",
+        "apellido": "Dominges",
+        "promedio": 5.0
+      }
+    ]
+  },
+  {
+    "id": "#4452",
+    "nombre": "Biologia para ingenieros",
+    "creditos": 3,
+    "profesor": {
+      "cedula": "34465221",
+      "nombres": "Ferney",
+      "apellidos": "Malaver",
+      "numeroTelefono": "3245679834"
+    },
+    "estudiantes": [
+      {
+        "id": "2255678",
+        "nombre": "Pablo",
+        "apellido": "Medina",
+        "promedio": 3.6
+      }
+    ]
+  },
+  {
+    "id": "Matematicas discretas",
+    "nombre": "#43565",
+    "creditos": 4,
+    "profesor": {
+      "cedula": "34465221",
+      "nombres": "Ferney",
+      "apellidos": "Malaver",
+      "numeroTelefono": "3245679834"
+    },
+    "estudiantes": []
+  }
+]

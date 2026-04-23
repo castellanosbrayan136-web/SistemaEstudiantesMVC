@@ -1,0 +1,32 @@
+[
+  {
+    "id": "2255622",
+    "nombre": "Brayan Stiven",
+    "apellido": "Castellanos Diaz",
+    "promedio": 5.0
+  },
+  {
+    "id": "2255644",
+    "nombre": "Juan",
+    "apellido": "Suarez",
+    "promedio": 3.0
+  },
+  {
+    "id": "225543",
+    "nombre": "Camilo",
+    "apellido": "Jaimes",
+    "promedio": 2.0
+  },
+  {
+    "id": "2255634",
+    "nombre": "Felipe",
+    "apellido": "Dominges",
+    "promedio": 5.0
+  },
+  {
+    "id": "2255678",
+    "nombre": "Pablo",
+    "apellido": "Medina",
+    "promedio": 3.6
+  }
+]

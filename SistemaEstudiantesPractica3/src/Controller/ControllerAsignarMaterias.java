@@ -9,6 +9,8 @@ import View.ScreenManager;
 import View.VistaAsignarMaterias;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.event.WindowAdapter;
+import java.awt.event.WindowEvent;
 import java.util.List;
 import javax.swing.table.DefaultTableModel;
 
@@ -26,9 +28,18 @@ public final class ControllerAsignarMaterias implements ActionListener{
     }
     
     public void activarBotones() {
-        vistaAsignarMaterias.getBtnRegresar().addActionListener(this);
         vistaAsignarMaterias.getBtnAsignarProfesor().addActionListener(this);
         vistaAsignarMaterias.getBtnMatricularEstudiante().addActionListener(this);
+        eventoBotonX();
+    }
+    
+    public void eventoBotonX() {
+        this.vistaAsignarMaterias.addWindowListener(new WindowAdapter() {
+            @Override
+            public void windowClosing(WindowEvent e) {
+                ScreenManager.cerrarAsignarMaterias(vistaAsignarMaterias);
+            }
+        });
     }
     
     public void llenarTablaEstudianteMateria() {
@@ -78,14 +89,10 @@ public final class ControllerAsignarMaterias implements ActionListener{
 
     @Override
     public void actionPerformed(ActionEvent e) {
-        if (e.getSource() == vistaAsignarMaterias.getBtnRegresar()) {
-            System.out.println("boton regresar");
-            ScreenManager.cerrarMaterias(vistaAsignarMaterias);
-            ScreenManager.abrirMenuPrincipal();
-        } else if (e.getSource() == vistaAsignarMaterias.getBtnAsignarProfesor()) {
-            ScreenManager.cambiarVistaAAsignarProfesor(vistaAsignarMaterias);
+        if (e.getSource() == vistaAsignarMaterias.getBtnAsignarProfesor()) {
+            ScreenManager.mostrarPanelAsignarProfesor(vistaAsignarMaterias);
         } else if (e.getSource() == vistaAsignarMaterias.getBtnMatricularEstudiante()) {
-            ScreenManager.cambiarAPanelMatricularEstudiante(vistaAsignarMaterias);
+            ScreenManager.mostrarPanelMatricularEstudiante(vistaAsignarMaterias);
         }
     }
     

@@ -13,7 +13,7 @@ import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 
 
-public class ControllerEstudiante implements ActionListener{
+public final class ControllerEstudiante implements ActionListener{
     private final EstudianteDAO estudianteDAO;
     private final VistaEstudiante vistaEstudiante;
 
@@ -22,13 +22,9 @@ public class ControllerEstudiante implements ActionListener{
         this.vistaEstudiante = vistaEstudiante;
         
         activarBotones();
-        
-    this.vistaEstudiante.addWindowListener(new java.awt.event.WindowAdapter() {
-        @Override
-        public void windowClosing(java.awt.event.WindowEvent e) {
-            System.exit(0);
-        }
-    });
+        limpiarEspacios();
+        llenarTabla();
+        eventoBotonX();
     }
 
 
@@ -40,10 +36,17 @@ public class ControllerEstudiante implements ActionListener{
         vistaEstudiante.getBtnEliminar().addActionListener(this);
         vistaEstudiante.getBtnRegistrar().addActionListener(this);
         vistaEstudiante.getBtnLimpiarTabla().addActionListener(this);
-        vistaEstudiante.getBtnRegresar().addActionListener(this);
         
-        limpiarEspacios();
-        llenarTabla();
+        
+    }
+    
+    public void eventoBotonX() {
+        this.vistaEstudiante.addWindowListener(new java.awt.event.WindowAdapter() {
+        @Override
+        public void windowClosing(java.awt.event.WindowEvent e) {
+            ScreenManager.cerrarGestionEstudiantes(vistaEstudiante);
+        }
+    });
     }
     
 
@@ -60,10 +63,7 @@ public class ControllerEstudiante implements ActionListener{
             eliminarEstudiante();
         } else if (e.getSource() == vistaEstudiante.getBtnLimpiarTabla()) {
             limpiarTabla((DefaultTableModel) vistaEstudiante.getTablaEstudiantes().getModel());
-        }  else if (e.getSource() == vistaEstudiante.getBtnRegresar()) {
-            vistaEstudiante.dispose();
-            ScreenManager.abrirMenuPrincipal();
-        } 
+        }   
     }
     
     public void registrarEstudiante() {
@@ -181,6 +181,7 @@ public class ControllerEstudiante implements ActionListener{
         vistaEstudiante.setTxtApellido(null);
         vistaEstudiante.setTxtPromedio(0.0);
     }
+    
     
     
 }

@@ -37,7 +37,6 @@ public class VistaAsignarMaterias extends javax.swing.JFrame {
         jPanel2 = new javax.swing.JPanel();
         btnAsignarProfesor = new javax.swing.JButton();
         btnMatricularEstudiante = new javax.swing.JButton();
-        btnRegresar = new javax.swing.JButton();
         jPanel5 = new javax.swing.JPanel();
         jLabel3 = new javax.swing.JLabel();
         contend = new javax.swing.JPanel();
@@ -48,8 +47,7 @@ public class VistaAsignarMaterias extends javax.swing.JFrame {
         jScrollPane2 = new javax.swing.JScrollPane();
         tablaEstudianteMateria = new javax.swing.JTable();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setUndecorated(true);
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setResizable(false);
 
         jPanel1.setBackground(new java.awt.Color(16, 16, 16));
@@ -89,14 +87,6 @@ public class VistaAsignarMaterias extends javax.swing.JFrame {
 
         jPanel1.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 50, 250, 550));
 
-        btnRegresar.setBackground(new java.awt.Color(204, 0, 51));
-        btnRegresar.setFont(new java.awt.Font("Segoe UI Black", 3, 24)); // NOI18N
-        btnRegresar.setForeground(new java.awt.Color(255, 255, 255));
-        btnRegresar.setText("X");
-        btnRegresar.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 51, 51)));
-        btnRegresar.setPreferredSize(new java.awt.Dimension(50, 50));
-        jPanel1.add(btnRegresar, new org.netbeans.lib.awtextra.AbsoluteConstraints(750, 0, -1, -1));
-
         jPanel5.setBackground(new java.awt.Color(102, 102, 102));
 
         jLabel3.setFont(new java.awt.Font("Segoe UI", 1, 28)); // NOI18N
@@ -110,14 +100,14 @@ public class VistaAsignarMaterias extends javax.swing.JFrame {
             .addGroup(jPanel5Layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 369, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(375, Short.MAX_VALUE))
+                .addContainerGap(425, Short.MAX_VALUE))
         );
         jPanel5Layout.setVerticalGroup(
             jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(jLabel3, javax.swing.GroupLayout.DEFAULT_SIZE, 50, Short.MAX_VALUE)
         );
 
-        jPanel1.add(jPanel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 750, 50));
+        jPanel1.add(jPanel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 800, 50));
 
         contend.setBackground(new java.awt.Color(18, 18, 18));
 
@@ -244,11 +234,6 @@ public class VistaAsignarMaterias extends javax.swing.JFrame {
         java.awt.EventQueue.invokeLater(() -> new VistaAsignarMaterias().setVisible(true));
     }
 
-
-    public JButton getBtnRegresar() {
-        return btnRegresar;
-    }
-
     public JPanel getContend() {
         return contend;
     }
@@ -281,7 +266,6 @@ public class VistaAsignarMaterias extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnAsignarProfesor;
     private javax.swing.JButton btnMatricularEstudiante;
-    private javax.swing.JButton btnRegresar;
     private javax.swing.JPanel contend;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JPanel jPanel1;

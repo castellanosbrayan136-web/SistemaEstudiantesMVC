@@ -8,6 +8,8 @@ import View.ScreenManager;
 import View.VistaMaterias;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.event.WindowAdapter;
+import java.awt.event.WindowEvent;
 import java.util.List;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
@@ -23,18 +25,27 @@ public class ControllerMateria implements ActionListener{
         this.materiaDAO = materiaDAO;
         
         activarBotones();
+        llenarTabla();
+        limpiarEspacios();
     }
     
     public void activarBotones() {
-        vistaMateria.getBtnRegresar().addActionListener(this);
         vistaMateria.getBtnRegistrar().addActionListener(this);
         vistaMateria.getBtnBuscar().addActionListener(this);
         vistaMateria.getBtnActualizar().addActionListener(this);
         vistaMateria.getBtnEliminar().addActionListener(this);
         vistaMateria.getBtnResetearDatos().addActionListener(this);
        
-        llenarTabla();
-        limpiarEspacios();
+        eventoBotoX();
+    }
+    
+    public void eventoBotoX() {
+        this.vistaMateria.addWindowListener(new WindowAdapter() {
+            @Override
+            public void windowClosing(WindowEvent e) {
+                ScreenManager.cerrarGestionMaterias(vistaMateria);
+            }
+        });
     }
 
 
@@ -50,10 +61,7 @@ public class ControllerMateria implements ActionListener{
             eliminarMateria();
         } else if (e.getSource() == vistaMateria.getBtnResetearDatos()) {
             resetearDatos((DefaultTableModel) vistaMateria.getTablaMaterias().getModel());
-        }  else if (e.getSource() == vistaMateria.getBtnRegresar()) {
-            ScreenManager.cerrarMaterias(vistaMateria);
-            ScreenManager.abrirMenuPrincipal();
-        } 
+        }  
     }
     
     public void registrarMateria() {
@@ -167,4 +175,5 @@ public class ControllerMateria implements ActionListener{
         vistaMateria.setTxtNombreMateria(null);
         vistaMateria.setTxtCreditos(0);
     }
+    
 }

@@ -1,0 +1,26 @@
+[
+  {
+    "cedula": "455",
+    "nombres": "Tilson",
+    "apellidos": "Suarez",
+    "numeroTelefono": "3163849234"
+  },
+  {
+    "cedula": "877",
+    "nombres": "Juan",
+    "apellidos": "Mesa",
+    "numeroTelefono": "3451234234"
+  },
+  {
+    "cedula": "7363452",
+    "nombres": "Maria",
+    "apellidos": "Carrillo",
+    "numeroTelefono": "3158746523"
+  },
+  {
+    "cedula": "34465221",
+    "nombres": "Ferney",
+    "apellidos": "Malaver",
+    "numeroTelefono": "3245679834"
+  }
+]

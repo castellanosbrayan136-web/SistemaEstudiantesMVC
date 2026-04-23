@@ -17,72 +17,89 @@ import java.awt.BorderLayout;
 
 
 public class ScreenManager {
+    public static EstudianteDAO estudianteDAO = new EstudianteDAO();
+    public static MateriaDAO materiaDAO = new MateriaDAO();
+    public static ProfesorDAO profesorDAO = new ProfesorDAO();
+    
+    
     public static void abrirMenuPrincipal() {
         VistaPrincipal vistaPrincipal = new VistaPrincipal();
-        ControllerMenuPrincipal controllerPrincipal  = new ControllerMenuPrincipal(vistaPrincipal);
+        new ControllerMenuPrincipal(vistaPrincipal);
         
         vistaPrincipal.setVisible(true);
     }
     
     public static void cerrarMenuPrincipal(VistaPrincipal vistaPrincipal) {
-        vistaPrincipal.dispose();
+        vistaPrincipal.setVisible(false);
     }
-    public static void abrirEstudiantes() {
+
+    public static void finalizarTodo() {
+        System.exit(0);
+    }
+    
+    
+    public static void abrirGestionEstudiantes(VistaPrincipal vistaPrincipal) {
+        cerrarMenuPrincipal(vistaPrincipal);
         VistaEstudiante vistaEstudiante = new VistaEstudiante();
-        EstudianteDAO estudianteDAO = new EstudianteDAO();
         
         ControllerEstudiante controllerEstudiante = new ControllerEstudiante(estudianteDAO, vistaEstudiante);
         
         vistaEstudiante.setVisible(true);
     }
     
-    public static void cerrarEstudiantes(VistaEstudiante vistaEstudiante) {
+    public static void cerrarGestionEstudiantes(VistaEstudiante vistaEstudiante) {
         vistaEstudiante.setVisible(false);
+        abrirMenuPrincipal();
     }
     
-    public static void abrirMenuProfesores() {
+    public static void abrirGestionProfesores(VistaPrincipal vistaPrincipal) {
+        cerrarMenuPrincipal(vistaPrincipal);
         ViewProfesor vistaProfesor = new ViewProfesor();
-        ProfesorDAO profesorDAO = new ProfesorDAO();
         
-        ControllerProfesor controllerProfesor = new ControllerProfesor(profesorDAO, vistaProfesor);
+        new ControllerProfesor(profesorDAO, vistaProfesor);
         
         vistaProfesor.setVisible(true);
     }
     
-    public static void cerrarMenuProfesores(ViewProfesor vistaProfesor) {
+    public static void cerrarGestionProfesores(ViewProfesor vistaProfesor) {
         vistaProfesor.setVisible(false);
+        abrirMenuPrincipal();
+        
     }
     
-    public static void abrirMaterias() {
+    public static void abrirGestionMaterias(VistaPrincipal vistaPrincipal) {
+        cerrarMenuPrincipal(vistaPrincipal);
         VistaMaterias vistaMaterias = new VistaMaterias();
-        MateriaDAO materiaDAO = new MateriaDAO();
         
-        ControllerMateria controllerMateria = new ControllerMateria(vistaMaterias, materiaDAO);
+        new ControllerMateria(vistaMaterias, materiaDAO);
         
         vistaMaterias.setVisible(true);
     }
     
-    public static void cerrarMaterias(VistaMaterias vistaMaterias) {
+    public static void cerrarGestionMaterias(VistaMaterias vistaMaterias) {
         vistaMaterias.setVisible(false);
+        abrirMenuPrincipal();
+        
     }
     
-    public static void abrirAsignarMaterias() {
+    public static void abrirAsignarMaterias(VistaPrincipal vistaPrincipal) {
+        cerrarMenuPrincipal(vistaPrincipal);
         VistaAsignarMaterias vistaAsignarMaterias = new VistaAsignarMaterias();
-        ControllerAsignarMaterias controllerAsignarMaterias = new ControllerAsignarMaterias(vistaAsignarMaterias);
+        new ControllerAsignarMaterias(vistaAsignarMaterias);
         
         vistaAsignarMaterias.setVisible(true);
     }
     
-    public static void cerrarMaterias(VistaAsignarMaterias vistaAsignarMaterias) {
+    public static void cerrarAsignarMaterias(VistaAsignarMaterias vistaAsignarMaterias) {
         vistaAsignarMaterias.setVisible(false);
+        abrirMenuPrincipal();
+        
     }
     
-    public static void cambiarVistaAAsignarProfesor(VistaAsignarMaterias vistaAsignarMaterias) {
+    public static void mostrarPanelAsignarProfesor(VistaAsignarMaterias vistaAsignarMaterias) {
     PanelAsignarProfesor vistaAsignarProfesor = new PanelAsignarProfesor();
-    MateriaDAO materiaDAO = new MateriaDAO();
-    ProfesorDAO profesorDAO = new ProfesorDAO();
     
-    ControllerPanelAsignarProfesor controllerPanelAsignarProfesor = new ControllerPanelAsignarProfesor(materiaDAO, profesorDAO, vistaAsignarProfesor);
+    new ControllerPanelAsignarProfesor(materiaDAO, profesorDAO, vistaAsignarProfesor);
     
     vistaAsignarProfesor.setSize(550,550);
     vistaAsignarProfesor.setLocation(0, 0);
@@ -93,11 +110,10 @@ public class ScreenManager {
     vistaAsignarMaterias.repaint();
 }
     
-    public static void cambiarAPanelMatricularEstudiante(VistaAsignarMaterias vistaAsignarMaterias) {
+    public static void mostrarPanelMatricularEstudiante(VistaAsignarMaterias vistaAsignarMaterias){
         PanelMatricularEstudiante panelMatricularEstudiante = new PanelMatricularEstudiante();
-        MateriaDAO materiaDAO = new MateriaDAO();
-        EstudianteDAO estudianteDAO = new EstudianteDAO();
-        ControllerPanelMatricularEstudiante controllerMatriculaE = new ControllerPanelMatricularEstudiante(materiaDAO, panelMatricularEstudiante, estudianteDAO);
+        
+        new ControllerPanelMatricularEstudiante(materiaDAO, panelMatricularEstudiante, estudianteDAO);
         
         panelMatricularEstudiante.setSize(550,550);
         panelMatricularEstudiante.setLocation(0,0);

@@ -3,7 +3,6 @@ package Controller;
 //@autor: Brayan C
 
 import View.ScreenManager;
-import View.PanelAsignarProfesor;
 import View.VistaPrincipal;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -31,7 +30,8 @@ public class ControllerMenuPrincipal implements ActionListener{
         this.vistaPrincipal.addWindowListener(new java.awt.event.WindowAdapter() {
             @Override
             public void windowClosing(java.awt.event.WindowEvent e) {
-                ScreenManager.cerrarMenuPrincipal(vistaPrincipal);
+                vistaPrincipal.dispose();
+                ScreenManager.finalizarTodo();
             }
         });
     }
@@ -41,28 +41,17 @@ public class ControllerMenuPrincipal implements ActionListener{
     @Override
     public void actionPerformed(ActionEvent e) {
         if (e.getSource() == vistaPrincipal.getBtnRegistrarEstudiantes()) {
-            ScreenManager.cerrarMenuPrincipal(vistaPrincipal);
-            ScreenManager.abrirEstudiantes();
+            ScreenManager.abrirGestionEstudiantes(vistaPrincipal);
         } else if (e.getSource() == vistaPrincipal.getBtnRegistrarProfesores()) {
-            ScreenManager.cerrarMenuPrincipal(vistaPrincipal);
-            ScreenManager.abrirMenuProfesores();
+            ScreenManager.abrirGestionProfesores(vistaPrincipal);
         } else if (e.getSource() == vistaPrincipal.getBtnRegistrarMaterias()){
-            ScreenManager.cerrarMenuPrincipal(vistaPrincipal);
-            ScreenManager.abrirMaterias();
+            ScreenManager.abrirGestionMaterias(vistaPrincipal);
         } else if (e.getSource() == vistaPrincipal.getBtnSalir()) {
             vistaPrincipal.dispose();
+            ScreenManager.finalizarTodo();
             ScreenManager.cerrarMenuPrincipal(vistaPrincipal);
-        } else if (e.getSource() == vistaPrincipal.getBtnRegistrarProfesores()) {
-            ScreenManager.cerrarMenuPrincipal(vistaPrincipal);
-            ScreenManager.abrirMenuProfesores();
-        } else if (e.getSource() == vistaPrincipal.getBtnAsignarMaterias()) {
-            ScreenManager.cerrarMenuPrincipal(vistaPrincipal);
-            ScreenManager.abrirAsignarMaterias();
+        }  else if (e.getSource() == vistaPrincipal.getBtnAsignarMaterias()) {
+            ScreenManager.abrirAsignarMaterias(vistaPrincipal);
         }
-    }
-    
-    public void finalizar() {
-        this.vistaPrincipal.dispose();
-        this.vistaPrincipal = null;
     }
 }
