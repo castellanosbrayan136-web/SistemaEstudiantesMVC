@@ -54,7 +54,7 @@ public class PanelAsignarProfesor extends javax.swing.JPanel {
         lblBuscarMateria.setText("Filtrar materia por codigo");
         lblBuscarMateria.setPreferredSize(new java.awt.Dimension(275, 30));
 
-        tablaProfesores.setForeground(new java.awt.Color(0, 0, 0));
+        tablaProfesores.setBackground(new java.awt.Color(102, 102, 102));
         tablaProfesores.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
@@ -73,7 +73,7 @@ public class PanelAsignarProfesor extends javax.swing.JPanel {
         });
         jScrollPane1.setViewportView(tablaProfesores);
 
-        tablaMaterias.setForeground(new java.awt.Color(0, 0, 0));
+        tablaMaterias.setBackground(new java.awt.Color(102, 102, 102));
         tablaMaterias.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
@@ -92,7 +92,6 @@ public class PanelAsignarProfesor extends javax.swing.JPanel {
         });
         jScrollPane2.setViewportView(tablaMaterias);
 
-        txtICedulaProfesor.setBackground(new java.awt.Color(255, 255, 255));
         txtICedulaProfesor.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         txtICedulaProfesor.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -100,7 +99,6 @@ public class PanelAsignarProfesor extends javax.swing.JPanel {
             }
         });
 
-        txtIdMateria.setBackground(new java.awt.Color(255, 255, 255));
         txtIdMateria.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         txtIdMateria.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -110,7 +108,7 @@ public class PanelAsignarProfesor extends javax.swing.JPanel {
 
         btnAsignar.setFont(new java.awt.Font("Segoe UI", 1, 22)); // NOI18N
         btnAsignar.setText("Asignar");
-        btnAsignar.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(153, 153, 153)));
+        btnAsignar.setBorder(javax.swing.BorderFactory.createEtchedBorder(java.awt.Color.black, java.awt.Color.black));
         btnAsignar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         btnAsignar.setPreferredSize(new java.awt.Dimension(200, 200));
 
